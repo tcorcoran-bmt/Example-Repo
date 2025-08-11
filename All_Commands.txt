@@ -1,0 +1,913 @@
+
+Admin@MIS MINGW64 ~/Desktop
+$ cd C:/users/admin
+
+Admin@MIS MINGW64 /c/users/admin
+$ mkdir git-project
+
+Admin@MIS MINGW64 /c/users/admin
+$ cd git-project
+
+Admin@MIS MINGW64 /c/users/admin/git-project
+$ dir
+
+Admin@MIS MINGW64 /c/users/admin/git-project
+$ ssh-keygen -t rsa -f ~/ssh/id_rsa
+Generating public/private rsa key pair.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Saving key "/c/Users/Admin/ssh/id_rsa" failed: No such file or directory
+
+Admin@MIS MINGW64 /c/users/admin/git-project
+$ ssh-keygen -t rsa -f ~/.ssh/id_rsa
+Generating public/private rsa key pair.
+Created directory '/c/Users/Admin/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/Admin/.ssh/id_rsa
+Your public key has been saved in /c/Users/Admin/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:FW+tH1iDeBSw1yWKx9qd20I50YUCjU6bvATm67b9y5s Admin@MIS
+The key's randomart image is:
++---[RSA 3072]----+
+|          +=o...o|
+|        o oOo=.+.|
+|       o ==oX.* .|
+|        ..*B = = |
+|        So..+ B  |
+|        . .  o = |
+|       .      + .|
+|        o. . . . |
+|       .....Eo   |
++----[SHA256]-----+
+
+Admin@MIS MINGW64 /c/users/admin/git-project
+$ cat ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDBlT+1HfTiXOiKsJ1A1qzLfQWuZFUHnZ8dTFEK5dS5xxu+gIjH1wys29KetzML/x4TZQ4Dip88eFYTY9KyXb9pXqUrr+UFnOBCPSmiZuP+dIMUCXqpY0cc4WWoPlnHeRuDG5TzHQ39qU7nivsqGa1U+/Nu0fppd1XfGA5vhHOuBXyplG87XDAIpYY/REpDD+af5o+sl+nGJM/mRwqAWqwl2wW81/tyc9HiJR8ycEWj9JkoGs0XtMWn3WydmoaHytBoTK5PSxLQIOiQXALud+D0xottMUk5w+dKRr7eyeQb3iNqNeutyrtHcUKTXDgSHrlsx7xm1MXDcXI3KRQjYBGLsV6Hi7hZ11ualec7ZIX5AstigPyZMYajtMv2uxNczZEGjl9s0jWoTn60+g8m9AlAvo1sDSD5sqiAvaeH54Ew/7vFdkcpzrttoPh4dz7rF6d7G9fDEoCza58Cn/IRXtPoKCz6lCdv0ybofsZVN34B6jwpXGIh6n+30n4tZDzWuYs= Admin@MIS
+
+Admin@MIS MINGW64 /c/users/admin/git-project
+$ git clone git@github.com:tcorcoran-bmt/Example-Repo.git~
+Cloning into 'Example-Repo.git~'...
+The authenticity of host 'github.com (20.26.156.215)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? y
+Please type 'yes', 'no' or the fingerprint: yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+fatal: remote error:
+  is not a valid repository name
+Visit https://support.github.com/ for help
+
+Admin@MIS MINGW64 /c/users/admin/git-project
+$ git clone git@github.com:tcorcoran-bmt/Example-Repo.git
+Cloning into 'Example-Repo'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (3/3), done.
+
+Admin@MIS MINGW64 /c/users/admin/git-project
+$ ls
+Example-Repo/
+
+Admin@MIS MINGW64 /c/users/admin/git-project
+$ cd Example-Repo
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (main)
+$ ls
+README.md
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (main)
+$ it status
+bash: it: command not found
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        File1.txt.txt
+        File2.txt.txt
+        File3.py.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (main)
+$ git add .
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (main)
+$ git commit -m "first push to the repo"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'Admin@MIS.(none)')
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (main)
+$ ^C
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (main)
+$ ^[[200~  git config --global user.email "you@example.com"
+bash: $'\E[200~': command not found
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (main)
+$   git config --global user.name "Your Name"
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (main)
+$ git config --global user.email "tcorcoran@bartecmunicipal.com"
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (main)
+$ git config --global user.name "Tom Corcoran"
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (main)
+$ git commit -m "first push to the repo"
+[main c02ebba] first push to the repo
+ 4 files changed, 6 insertions(+), 1 deletion(-)
+ create mode 100644 File1.txt.txt
+ create mode 100644 File2.txt.txt
+ create mode 100644 File3.py.txt
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (main)
+$ git push origin main
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (6/6), 496 bytes | 248.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:tcorcoran-bmt/Example-Repo.git
+   98014b1..c02ebba  main -> main
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    File1.txt.txt
+        deleted:    File2.txt.txt
+        deleted:    File3.py.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        File1.txt
+        File2.txt
+        File3.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (main)
+$ git add .
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (main)
+$ git commit -m "Corrected file types"
+[main f1c7041] Corrected file types
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+ rename File1.txt.txt => File1.txt (100%)
+ rename File2.txt.txt => File2.txt (100%)
+ rename File3.py.txt => File3.py (100%)
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (main)
+$ git push origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 256 bytes | 256.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:tcorcoran-bmt/Example-Repo.git
+   c02ebba..f1c7041  main -> main
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file.java
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (main)
+$ git add file.java
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   file.java
+
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (main)
+$ git commit -m "Added a java file"
+[main 392d899] Added a java file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file.java
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (main)
+$ git push origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 309 bytes | 309.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:tcorcoran-bmt/Example-Repo.git
+   f1c7041..392d899  main -> main
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (main)
+$ git branch
+* main
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (main)
+$ git branch develop
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (main)
+$ git branch
+  develop
+* main
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (main)
+$ git checkout develop
+Switched to branch 'develop'
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (develop)
+$ git branch
+* develop
+  main
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (develop)
+$ git status
+On branch develop
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        File_develop.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (develop)
+$ git add File_develop.txt
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (develop)
+$ git staus
+git: 'staus' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (develop)
+$ git status
+On branch develop
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   File_develop.txt
+
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (develop)
+$ git commit -m "Branch changed to develop"
+[develop 44cfbd0] Branch changed to develop
+ 1 file changed, 1 insertion(+)
+ create mode 100644 File_develop.txt
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (develop)
+$ git push origin develop
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 316 bytes | 316.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'develop' on GitHub by visiting:
+remote:      https://github.com/tcorcoran-bmt/Example-Repo/pull/new/develop
+remote:
+To github.com:tcorcoran-bmt/Example-Repo.git
+ * [new branch]      develop -> develop
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (develop)
+$ git status
+On branch develop
+nothing to commit, working tree clean
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (develop)
+$ git branch
+* develop
+  main
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (develop)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (main)
+$ git branch
+  develop
+* main
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (main)
+$ mkdir git-merge-conflict-example
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (main)
+$ cd git-merge-conflict-example
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (main)
+$ git init
+Initialized empty Git repository in C:/Users/Admin/git-project/Example-Repo/git-merge-conflict-example/.git/
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (master)
+$ touch hello.txt
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        hello.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (master)
+$ vim hello.txt
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (master)
+$ git add hello.txt
+warning: in the working copy of 'hello.txt', LF will be replaced by CRLF the next time Git touches it
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   hello.txt
+
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (master)
+$ git commit -m "first commit"
+[master (root-commit) 886a033] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.txt
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (master)
+$ git checkout -b new-branch
+Switched to a new branch 'new-branch'
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (new-branch)
+$ vim hello.txt
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (new-branch)
+$ git add hello.txt
+warning: in the working copy of 'hello.txt', LF will be replaced by CRLF the next time Git touches it
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (new-branch)
+$ git commit -m "made a change to the file"
+[new-branch 3425a00] made a change to the file
+ 1 file changed, 1 insertion(+)
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (new-branch)
+$ cat hello.txt
+This is Hello file.
+Making a change to the file.
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (new-branch)
+$ git branch -a
+  master
+* new-branch
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (new-branch)
+$ ls -a
+./  ../  .git/  hello.txt
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (new-branch)
+$ git branch
+  master
+* new-branch
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (new-branch)
+$ git checkout master
+Switched to branch 'master'
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (master)
+$ vim hello.txt
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (master)
+$ cat hello.txt
+This is Hello file.
+Making a bigger change to this file!
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (master)
+$ git add hello.txt
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (master)
+$ git commit -m "Modified the hello.txt file."
+[master 2f39351] Modified the hello.txt file.
+ 1 file changed, 1 insertion(+)
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (master)
+$ git merge new-branch
+Auto-merging hello.txt
+CONFLICT (content): Merge conflict in hello.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (master|MERGING)
+$ cat hello.txt
+This is Hello file.
+<<<<<<< HEAD
+Making a bigger change to this file!
+=======
+Making a change to the file.
+>>>>>>> new-branch
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (master|MERGING)
+$ vim hello.txt
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (master|MERGING)
+$ cat hello.txt
+This is Hello file.
+Making a bigger change to this file!
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (master|MERGING)
+$ git add hello.txt
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (master|MERGING)
+$ git commit -m "Resolved merge conflict"
+[master e7afda4] Resolved merge conflict
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (master)
+$ git branch
+* master
+  new-branch
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (master)
+$ cd Example-Repo
+bash: cd: Example-Repo: No such file or directory
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (master)
+$ cd C:/users/admin/git-project/Example-Repo
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (main)
+$ mkdir revert-exercise
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo (main)
+$ cd C:/users/admin/git-project/Example-Repo/revert-exercise
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (main)
+$ git branch -b new_branch
+error: unknown switch `b'
+usage: git branch [<options>] [-r | -a] [--merged] [--no-merged]
+   or: git branch [<options>] [-f] [--recurse-submodules] <branch-name> [<start-point>]
+   or: git branch [<options>] [-l] [<pattern>...]
+   or: git branch [<options>] [-r] (-d | -D) <branch-name>...
+   or: git branch [<options>] (-m | -M) [<old-branch>] <new-branch>
+   or: git branch [<options>] (-c | -C) [<old-branch>] <new-branch>
+   or: git branch [<options>] [-r | -a] [--points-at]
+   or: git branch [<options>] [-r | -a] [--format]
+
+Generic options
+    -v, --verbose         show hash and subject, give twice for upstream branch
+    -q, --quiet           suppress informational messages
+    -t, --track[=(direct|inherit)]
+                          set branch tracking configuration
+    -u, --set-upstream-to <upstream>
+                          change the upstream info
+    --unset-upstream      unset the upstream info
+    --color[=<when>]      use colored output
+    -r, --remotes         act on remote-tracking branches
+    --contains <commit>   print only branches that contain the commit
+    --no-contains <commit>
+                          print only branches that don't contain the commit
+    --abbrev[=<n>]        use <n> digits to display object names
+
+Specific git-branch actions:
+    -a, --all             list both remote-tracking and local branches
+    -d, --delete          delete fully merged branch
+    -D                    delete branch (even if not merged)
+    -m, --move            move/rename a branch and its reflog
+    -M                    move/rename a branch, even if target exists
+    -c, --copy            copy a branch and its reflog
+    -C                    copy a branch, even if target exists
+    -l, --list            list branch names
+    --show-current        show current branch name
+    --create-reflog       create the branch's reflog
+    --edit-description    edit the description for the branch
+    -f, --force           force creation, move/rename, deletion
+    --merged <commit>     print only branches that are merged
+    --no-merged <commit>  print only branches that are not merged
+    --column[=<style>]    list branches in columns
+    --sort <key>          field name to sort on
+    --points-at <object>  print only branches of the object
+    -i, --ignore-case     sorting and filtering are case insensitive
+    --recurse-submodules  recurse through submodules
+    --format <format>     format to use for the output
+
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (main)
+$ git checkout -b new)branch
+bash: syntax error near unexpected token `)'
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (main)
+$ git checkout -b new_branch
+Switched to a new branch 'new_branch'
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (new_branch)
+$ git status
+On branch new_branch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../git-merge-conflict-example/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (new_branch)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../git-merge-conflict-example/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (main)
+$ git add .
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../git-merge-conflict-example/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (main)
+$ git add hello.txt
+fatal: pathspec 'hello.txt' did not match any files
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (main)
+$ cd C:/users/admin/git-project/Example-Repo/git-merge-conflict-example
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (master)
+$ git add .
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (master)
+$ git checkout new-branch
+Switched to branch 'new-branch'
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (new-branch)
+$ git status
+On branch new-branch
+nothing to commit, working tree clean
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (new-branch)
+$ cd C:/users/admin/git-project/Example-Repo/revert-exercise
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../git-merge-conflict-example/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (main)
+$ git add .
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (main)
+$ git staus
+git: 'staus' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../git-merge-conflict-example/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (main)
+$ git branch
+  develop
+* main
+  new_branch
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (main)
+$ git branch -d new_branch
+Deleted branch new_branch (was 392d899).
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (main)
+$ git branch
+  develop
+* main
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../git-merge-conflict-example/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../git-merge-conflict-example/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (main)
+$ git push new-branch
+fatal: 'new-branch' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (main)
+$ git checkout new-branch
+error: pathspec 'new-branch' did not match any file(s) known to git
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (main)
+$ cd C:/users/admin/git-project/Example-Repo/git-merge-conflict-example
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (new-branch)
+$ git branch
+  master
+* new-branch
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (new-branch)
+$ git puch origin new-branch
+git: 'puch' is not a git command. See 'git --help'.
+
+The most similar command is
+        push
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (new-branch)
+$ git push origin new-branch
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (new-branch)
+$ git branch -d new-branch
+error: Cannot delete branch 'new-branch' checked out at 'C:/Users/Admin/git-project/Example-Repo/git-merge-conflict-example'
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (new-branch)
+$ git branch
+  master
+* new-branch
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (new-branch)
+$ git checkout master
+Switched to branch 'master'
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (master)
+$ git branch -d new-branch
+Deleted branch new-branch (was 3425a00).
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/git-merge-conflict-example (master)
+$ cd C:/users/admin/git-project/Example-Repo/revert-exercise
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (main)
+$ git branch
+  develop
+* main
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../git-merge-conflict-example/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (main)
+$ git add .
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../git-merge-conflict-example/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (main)
+$ git add
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Turn this message off by running
+hint: "git config advice.addEmptyPathspec false"
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (main)
+$ git branch
+  develop
+* main
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (main)
+$ git init
+Initialized empty Git repository in C:/Users/Admin/git-project/Example-Repo/revert-exercise/.git/
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (master)
+$ touch test1.txt
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (master)
+$ git add test1.txt
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   test1.txt
+
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (master)
+$ git commit -m "added test1.txt to the commit"
+[master (root-commit) f795465] added test1.txt to the commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test1.txt
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (master)
+$ touch test2.txt
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (master)
+$ touch test3.txt
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test2.txt
+        test3.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (master)
+$ git add test2.txt
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (master)
+$ git commit -m "added test2.txt to the commit"
+[master 2446f4d] added test2.txt to the commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test2.txt
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test3.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (master)
+$ git add test3.txt
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (master)
+$ git commit -m "added test3.txt to the commit"
+[master 79bcad7] added test3.txt to the commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test3.txt
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (master)
+$ git log master
+commit 79bcad730069516042d13df7b048d79d62d2db93 (HEAD -> master)
+Author: Tom Corcoran <tcorcoran@bartecmunicipal.com>
+Date:   Mon Aug 11 14:53:29 2025 +0100
+
+    added test3.txt to the commit
+
+commit 2446f4d43acb066d5f2b1f8c57c7c1d82a187a18
+Author: Tom Corcoran <tcorcoran@bartecmunicipal.com>
+Date:   Mon Aug 11 14:52:54 2025 +0100
+
+    added test2.txt to the commit
+
+commit f79546502629b70140ab625800882bc289ca6617
+Author: Tom Corcoran <tcorcoran@bartecmunicipal.com>
+Date:   Mon Aug 11 14:51:39 2025 +0100
+
+    added test1.txt to the commit
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (master)
+$ ls
+test1.txt  test2.txt  test3.txt
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (master)
+$ git revert HEAD
+[master c63dad5] Revert "added test3.txt to the commit"
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 test3.txt
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (master)
+$ ls
+test1.txt  test2.txt
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (master)
+$ git log master
+commit c63dad5cc488079eb658fcef65ce92339e589819 (HEAD -> master)
+Author: Tom Corcoran <tcorcoran@bartecmunicipal.com>
+Date:   Mon Aug 11 14:54:37 2025 +0100
+
+    Revert "added test3.txt to the commit"
+
+    This reverts commit 79bcad730069516042d13df7b048d79d62d2db93.
+
+commit 79bcad730069516042d13df7b048d79d62d2db93
+Author: Tom Corcoran <tcorcoran@bartecmunicipal.com>
+Date:   Mon Aug 11 14:53:29 2025 +0100
+
+    added test3.txt to the commit
+
+commit 2446f4d43acb066d5f2b1f8c57c7c1d82a187a18
+Author: Tom Corcoran <tcorcoran@bartecmunicipal.com>
+Date:   Mon Aug 11 14:52:54 2025 +0100
+
+    added test2.txt to the commit
+
+commit f79546502629b70140ab625800882bc289ca6617
+Author: Tom Corcoran <tcorcoran@bartecmunicipal.com>
+Date:   Mon Aug 11 14:51:39 2025 +0100
+
+    added test1.txt to the commit
+
+Admin@MIS MINGW64 /c/users/admin/git-project/Example-Repo/revert-exercise (master)
+$
