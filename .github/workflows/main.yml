@@ -1,0 +1,24 @@
+QAWEBEX032 13/08/2025 12:32 • name: Basic Workflow Example
+
+# -------------------------
+# When to run this workflow
+# -------------------------
+
+on:
+push:
+branches: [main]
+workflow_dispatch:
+
+# -------------------------
+# What jobs to run
+# -------------------------
+jobs:
+say-hello: # Job name (you can choose whatever!)
+runs-on: ubuntu-latest # The container/runner OS, can be ubuntu@22, windows, etc
+steps: # Steps run sequentially 
+- name: Checkout Repo
+uses: actions/checkout@v4
+- name: Say Hello
+run: echo "Hello from GH Actions!"
+- name: List Files
+run: ls -a
