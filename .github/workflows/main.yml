@@ -13,7 +13,7 @@ workflow_dispatch:
 # What jobs to run
 # -------------------------
 jobs:
-say-hello: # Job name (you can choose whatever!)
+say-hello: # Job name
 runs-on: ubuntu-latest # The container/runner OS, can be ubuntu@22, windows, etc
 steps: # Steps run sequentially 
 - name: Checkout Repo
